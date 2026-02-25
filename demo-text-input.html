@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Text Input Demo</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; background: #f4f4f4; }
+        .container { max-width: 500px; margin: auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1); }
+        input, button { padding: 12px; margin: 10px; font-size: 18px; width: 80%; }
+        button { background: #4CAF50; color: white; border: none; cursor: pointer; }
+        button:hover { background: #45a049; }
+        #result { margin-top: 30px; font-size: 20px; color: #333; white-space: pre-wrap; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Simple Text Input Test</h2>
+        <p>Enter any text and click the button to display it on the page (simple echo demo - no server required).</p>
+        
+        <input type="text" id="inputField" placeholder="Enter text here">
+        <br>
+        <button onclick="displayText()">Display Text</button>
+        
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function displayText() {
+            const value = document.getElementById('inputField').value.trim();
+            if (!value) {
+                alert('Please enter some text!');
+                return;
+            }
+
+            const resultDiv = document.getElementById('result');
+            // Display the entered text directly on the page
+            resultDiv.innerHTML = `<pre>Entered text:\n${value}</pre>`;
+        }
+    </script>
+</body>
+</html>
