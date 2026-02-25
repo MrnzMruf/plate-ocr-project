@@ -66,6 +66,14 @@ Achieved production-ready stability with zero permanent data loss even under fai
 - Microservices scaling & observability basics
 - Troubleshooting in constrained environments (sanctions, limited resources)
 
+## Simple Frontend Demos (API Testing Interfaces)
+
+Two basic HTML pages to demonstrate API interaction:
+
+- **[test-text-input.html](./test-text-input.html)**: Test API with manual text input (e.g. plate number)
+- **[test-image-upload.html](./test-image-upload.html)**: Test image upload and processing endpoint
+
+These are purely educational / portfolio examples and do not contain any real project code.
 ## Future Improvements (planned but not implemented)
 - Full Kafka integration (KRaft mode)
 - Prometheus + Grafana monitoring
