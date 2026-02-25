@@ -80,3 +80,19 @@ These are purely educational / portfolio examples and do not contain any real pr
 - GPU acceleration for OCR
 - Automated client updates in offline mode
 
+
+## Demo Frontend Pages
+
+Two static HTML files to demonstrate basic API interaction concepts:
+
+- [demo-text-input.html](./demo-text-input.html)  
+  Simple text input page that echoes the entered text (basic test interface)
+
+- [demo-image-upload.html](./demo-image-upload.html)  
+  Image upload page with file preview (simulates sending an image to an endpoint)
+
+**Important Note**  
+These are purely educational/portfolio demos.  
+No real company endpoints, logic, or data are used due to confidentiality.  
+The fetch URLs are placeholders — replace them locally only if testing with your own mock server.
+
