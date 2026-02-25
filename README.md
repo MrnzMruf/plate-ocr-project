@@ -1,6 +1,5 @@
-# plate-ocr-project
-Scalable ANPR system with OCR, API testing, and zero data loss architecture
-
+# plate-ocr-load-testing-case-study
+High-level architecture & load testing write-up for a scalable ANPR system (NDA-protected project)
 
 # Scalable ANPR System (Automatic Number Plate Recognition)
 
