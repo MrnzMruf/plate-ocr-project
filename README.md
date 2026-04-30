@@ -1,11 +1,5 @@
 # Scalable ANPR Load Testing & Architecture Case Study (2025)
 
-
-<img width="975" height="704" alt="image" src="https://github.com/user-attachments/assets/a9fe3609-63f7-4f51-a12a-10eb9847aaea" />
-
-
-
-
 High-level technical write-up and educational demos for a scalable Automatic Number Plate Recognition (ANPR) backend system.
 
 **Status**: Proof-of-Concept & Load-Tested Architecture  
@@ -36,20 +30,23 @@ Key achievements:
 Explored (but not fully implemented in demos): PostgreSQL replication, Kafka KRaft mode, TimescaleDB, offline .tar deployments.
 
 ## Architecture Overview
-Client → Traefik (port 80) → API Replicas (FastAPI)
-↓
-Redis Queue (broker)
-↓
-Celery Workers (concurrency=8+)
-↓
-Processing (OCR simulation) → Result
+
+<img width="975" height="704" alt="image" src="https://github.com/user-attachments/assets/a9fe3609-63f7-4f51-a12a-10eb9847aaea" />
 
 
-Core features:
-- Immediate response with task_id (async)
-- Background heavy tasks via Celery
-- Unlimited retries (`max_retries=None`) → **zero data loss**
-- Horizontal scaling (tested up to 16 replicas × 8 workers)
+| Component | Role |
+|-----------|------|
+| **Nginx** | Reverse proxy and load balancer — routes traffic across API replicas |
+| **FastAPI replicas** | Async REST API — accepts image uploads, returns task_id immediately |
+| **Redis** | Message broker — holds the job queue, guarantees no task is lost |
+| **Celery workers** | Background processors — run OCR with unlimited retries (`max_retries=None`) |
+
+Traffic flow: `Client → Nginx → FastAPI replica → Redis queue → Celery worker → Result`
+
+Key design decisions:
+- Async processing means the API never blocks under high load
+- `max_retries=None` ensures zero permanent data loss even if a worker crashes
+- Horizontal scaling tested up to 16 API replicas × 8 worker concurrency
 
 ## Development Phases & Code Demos
 
