@@ -1,5 +1,11 @@
 # Scalable ANPR Load Testing & Architecture Case Study (2025)
 
+
+<img width="975" height="704" alt="image" src="https://github.com/user-attachments/assets/a9fe3609-63f7-4f51-a12a-10eb9847aaea" />
+
+
+
+
 High-level technical write-up and educational demos for a scalable Automatic Number Plate Recognition (ANPR) backend system.
 
 **Status**: Proof-of-Concept & Load-Tested Architecture  
