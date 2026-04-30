@@ -31,7 +31,8 @@ Explored (but not fully implemented in demos): PostgreSQL replication, Kafka KRa
 
 ## Architecture Overview
 
-<img width="975" height="704" alt="image" src="https://github.com/user-attachments/assets/a9fe3609-63f7-4f51-a12a-10eb9847aaea" />
+<img width="975" height="704" alt="image" src="https://github.com/user-attachments/assets/a9fe3609-63f7-4f51-a12a-10eb9847aaea" /><br>
+
 
 
 | Component | Role |
